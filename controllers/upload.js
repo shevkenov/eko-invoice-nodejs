@@ -4,7 +4,7 @@ const iconv = require("iconv-lite");
 const fileModel = require("../model/File");
 const invoiceModel = require("../model/Invoice");
 
-function parseInvoice(filePath) {
+function parseInvoice(filePath,fileName) {
   const buffer = iconv.decode(fs.readFileSync(filePath), "cp866");
   const stringBuffer = buffer.toString();
   return stringBuffer
@@ -31,7 +31,8 @@ function parseInvoice(filePath) {
         vat: invData[8],
         name,
         vatno,
-        klen: invData[16]
+        klen: invData[16],
+        fileName
       };
     });
 }
@@ -44,9 +45,12 @@ function processFile(file) {
 }
 
 function processInvoiceData(file) {
-  const invoiceData = parseInvoice(file.path);
+  const fileName = file.name.slice(0, 8);
+  const invoiceData = parseInvoice(file.path,fileName);
   return new Promise((resolve) => {
-    resolve(invoiceModel.insertMany(invoiceData));
+    resolve(
+      invoiceModel.insertMany(invoiceData)
+    );
   });
 }
 

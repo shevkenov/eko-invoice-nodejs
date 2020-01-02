@@ -16,7 +16,11 @@ const invoiceSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    required: true
+    validate: function(value){
+      if(!value){
+        throw Error(`Date is required at document ${this.number}`);
+      }
+    }
   },
   bulstat: {
     type: String,
@@ -43,6 +47,10 @@ const invoiceSchema = new mongoose.Schema({
   klen: {
     type: String,
     validate: numberValidation
+  },
+  fileName: {
+    type: String,
+    required: true
   }
 });
 
