@@ -1,0 +1,52 @@
+<div class="invoice">
+    <aside class="invoice-form">
+        <form action="/invoice" method="POST">
+            <label for="fromDate">Date from</label>
+            <input type="date" id="fromDate" name="fromDate" required value="{{fromDate}}">
+            <label for="toDate">Date to</label>
+            <input type="date" id="toDate" name="toDate" required value="{{toDate}}">
+            <label for="bulstat">Bulstat</label>
+            <input type="text" name="bulstat" id="bulstat" value="{{bulstat}}">
+            <label>Gas Station</label>
+            <input type="number" name="gasStation" id="gas-station" value="{{station}}">
+            <br>
+            <input type="submit" value="Report">
+        </form>
+    </aside>
+    <div class="invoice-result">
+        {{#if invoices}}
+            <table id="customers">
+                <tr>
+                    <th>Invoice No</th>
+                    <th>Station</th>
+                    <th>Date</th>
+                    <th>Bulstat</th>
+                    <th>Amount</th>
+                    <th>Base</th>
+                    <th>VAT</th>
+                    <th>Customer Name</th>
+                    <th>VAT number</th>
+                    <th>KLEN</th>
+                </tr>
+            
+            {{#each invoices}}
+                <tr>
+                    <td>{{number}}</td>
+                    <td>{{station}}</td>
+                    <td>{{stringDate}}</td>
+                    <td>{{bulstat}}</td>
+                    <td>{{amount}} lv.</td>
+                    <td>{{base}} lv.</td>
+                    <td>{{vat}} lv.</td>
+                    <td>{{name}}</td>
+                    <td>{{vatno}}</td>
+                    <td>{{klen}}</td>
+                </tr>
+            {{/each}}
+            </table>
+        {{else}}
+            <h2>Invoices issued by Prisma!</h2>
+            <h3>All documents in the database are issued only by Prisma in the period between /2006-01-01 - 2019-12-31/!</h3>
+        {{/if}}
+    </div>
+</div>

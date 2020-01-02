@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    display: flex;
+    background-color: rgb(33, 65, 114);
+    overflow: hidden;
+    height: 80px;
+    align-items: center;
+}
+
+.topnav img{
+  width: 70px;
+  height: 70px;
+  padding-left: 1em;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgb(13, 36, 112);
+  color: rgb(216, 213, 23);
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  margin-left: auto;
+}
+
+.notification{
+  text-align: center;
+  margin: 2em;
+  color: red;
+}
+
+.not-found {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.not-found > #sadFaceImg {
+  height: 30%;
+  width: 30%;
+}
+
+/* Login page start */
+
+.form {
+  background:  rgb(33, 65, 114);
+  padding: 2em;
+  max-width:600px;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  width: 30%;
+  border-radius:5px;
+  box-shadow:0 4px 10px 4px rgb(13, 36, 112);
+}
+
+input {
+  font-size:1rem;
+  width:80%;
+  height:80%;
+  padding:5px 10px;
+  background:none;
+  border:1px solid;
+  color:white;
+  border-radius: 5px;
+}
+
+input::placeholder{
+  color: white;
+}
+
+.field-wrap {
+  position:relative;
+  margin-bottom:40px;
+}
+
+.button {
+  border:0;
+  outline:none;
+  border-radius: 5px;
+  padding:1em 0;
+  font-size:1rem;
+  font-weight:bold;
+  letter-spacing:.1em;
+  background:  rgb(33, 65, 114);
+  color: white;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  border:1px solid;
+}
+
+.button-block {
+  display:block;
+  width:100%;
+}
+
+/* Login page end */
+
+/* invoice page start */
+
+.invoice {
+  display: flex;
+  height: 100vh;
+}
+
+.invoice-form{
+  background-color: rgb(219, 229, 245);
+  padding: 1em 1em;
+  width: 15%;
+}
+
+.invoice-form input {
+  display: block;
+  border: 1px solid black;
+  color: black;
+  margin: 0.5em;
+}
+
+.invoice-form label {
+  display: block;
+  margin: 0.5em;
+}
+
+.invoice-result{
+  width: 85%;
+  background-color: rgb(242, 244, 247);
+  padding: 2em 4em;
+}
+
+.invoice-result h2{
+  padding-bottom: 0.5em;
+}
+
+/* invoice page end */
+
+/* invoice table start */
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(219, 229, 245);
+  color: rgb(33, 65, 114);
+}
+
+/* invoice table end */
+
+/* start upload VAT file */
+
+.form h3{
+  color: white;
+  padding-bottom: 1em;
+}
+
+.form a{
+  color: white;
+}
+
+.progressBar{
+  margin-top: 1em;
+  height: 10px;
+  background: firebrick;
+  border-radius: 5px;
+  width: 0%;
+}
+
+.progressInfo{
+  margin-top: 2em;
+  font-weight: bold;
+  color: white;
+}
+
+.inputUploadFile{
+  padding-right: 1em;
+}
+
+.downloadFile{
+  display: none;
+  margin-top: 1em;
+}
+
+/* end upload VAT file */

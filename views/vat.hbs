@@ -1,0 +1,19 @@
+<div class="form">
+    <h3>Качване на файла за ДДС</h3>
+    <div id="upload">
+        <form enctype="multipart/form-data" action="/uploadVat" method="post">
+            <div class="field-wrap">
+                <input type="file" accept=".txt" multiple="multiple" name="fileToUpload" class="inputUploadFile"/>
+            </div>
+            
+        </form>
+    </div>
+    <div class="progress">
+        <p class="progressInfo"></p>
+        <div class="progressBar">
+        </div>
+    </div>
+    <div class="downloadFile">
+        <a href="/downloadVat">Download it</a>
+    </div>
+</div>
